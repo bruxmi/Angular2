@@ -198,6 +198,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
+    <Content Include="Angular\Products\product-list.component.html" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -227,6 +228,7 @@
     <TypeScriptCompile Include="Angular\app.module.ts" />
     <TypeScriptCompile Include="Angular\app.component.ts" />
     <TypeScriptCompile Include="Angular\main.ts" />
+    <TypeScriptCompile Include="Angular\Products\product-list.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
