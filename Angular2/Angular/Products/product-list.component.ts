@@ -1,5 +1,7 @@
-﻿import { Component, Directive } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
+import { ProductFilterPipe } from './product-filter.pipe';
+
 
 @Component({
     moduleId: module.id,
@@ -8,7 +10,7 @@ import { IProduct } from './product';
     styleUrls: ["product-list.component.css"]
 })
 
-export class ProductListComponent {
+export class ProductListComponent implements OnInit{
     pageTitle: string = "Product List"
     imageWidth: number = 50;
     imageMargin: number = 2;
@@ -42,4 +44,7 @@ export class ProductListComponent {
         this.showImage = !this.showImage;
     }
 
+    ngOnInit(): void {
+        console.log("In OnInit");
+    }
 }

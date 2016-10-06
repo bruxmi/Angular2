@@ -9,23 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var product_list_component_1 = require('./Products/product-list.component');
-var product_filter_pipe_1 = require('./Products/product-filter.pipe');
-var AppModule = (function () {
-    function AppModule() {
+var ProductFilterPipe = (function () {
+    function ProductFilterPipe() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, product_list_component_1.ProductListComponent, product_filter_pipe_1.ProductFilterPipe],
-            bootstrap: [app_component_1.AppComponent]
+    ProductFilterPipe.prototype.transform = function (value, args) {
+        var filter = args[0] ? args[0].toLocaleLowerCase() : null;
+        return filter ? value.filter(function (product) {
+            return product.productName.toLocaleLowerCase().indexOf(filter) != -1;
+        }) : value;
+    };
+    ProductFilterPipe = __decorate([
+        core_1.Pipe({
+            name: 'productFilter'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ProductFilterPipe);
+    return ProductFilterPipe;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ProductFilterPipe = ProductFilterPipe;
+//# sourceMappingURL=product-filter.pipe.js.map

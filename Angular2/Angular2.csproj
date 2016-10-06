@@ -231,6 +231,7 @@
     <TypeScriptCompile Include="Angular\main.ts" />
     <TypeScriptCompile Include="Angular\Products\product-list.component.ts" />
     <TypeScriptCompile Include="Angular\Products\product.ts" />
+    <TypeScriptCompile Include="Angular\Products\product-filter.pipe.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
