@@ -168,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\Products\product-list.component.css" />
+    <Content Include="Angular\Shared\Star\star.component.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -200,6 +201,7 @@
     </Content>
     <Content Include="package.json" />
     <Content Include="Angular\Products\product-list.component.html" />
+    <Content Include="Angular\Shared\Star\star.component.html" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -230,8 +232,13 @@
     <TypeScriptCompile Include="Angular\app.component.ts" />
     <TypeScriptCompile Include="Angular\main.ts" />
     <TypeScriptCompile Include="Angular\Products\product-list.component.ts" />
+    <TypeScriptCompile Include="Angular\Products\product.module.ts" />
     <TypeScriptCompile Include="Angular\Products\product.ts" />
     <TypeScriptCompile Include="Angular\Products\product-filter.pipe.ts" />
+    <TypeScriptCompile Include="Angular\Shared\shared.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Angular\Shared\Star\star.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

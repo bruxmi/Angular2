@@ -9,19 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import { ProductListComponent } from './Products/product-list.component';
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = "Product Managment";
+var common_1 = require('@angular/common');
+var star_component_1 = require('./Star/star.component');
+var SharedModule = (function () {
+    function SharedModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n        <h1>{{pageTitle}}</h1>\n        <pm-products></pm-products>"
+    SharedModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule],
+            exports: [
+                common_1.CommonModule,
+                star_component_1.StarComponent
+            ],
+            declarations: [star_component_1.StarComponent],
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], SharedModule);
+    return SharedModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.SharedModule = SharedModule;
+//# sourceMappingURL=shared.module.js.map

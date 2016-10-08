@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
-import { ProductFilterPipe } from './product-filter.pipe';
+//import { ProductFilterPipe } from './product-filter.pipe';
+//import { StarComponent } from '../Shared/Star/star.component';
 
 
 @Component({
@@ -18,26 +19,35 @@ export class ProductListComponent implements OnInit{
     listFilter: string = "cart";
     products: IProduct[] = [
         {
-            description: "description 1",
-            imageUrl: "https://openclipart.org/download/193438/freehammer.svg",
-            price: 32.99,
-            productCode: "GDN-0023",
             productId: 1,
-            productName: "Hammer",
+            productName: "Leaf Rake",
+            productCode: "GDN-0011",
             releaseDate: new Date(),
-            starRating: 4.2,
+            description: "Leaf rake with 48-inch wooden handle.",
+            price: 19.95,
+            starRating: 3.2,
+            imageUrl: "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
         },
         {
-            description: "description 2",
-            imageUrl: "https://openclipart.org/download/193438/freehammer.svg",
-            price: 44.99,
-            productCode: "GDN-0023",
             productId: 2,
-            productName: "Garden Cart 2",
+            productName: "Garden Cart",
+            productCode: "GDN-0023",
             releaseDate: new Date(),
+            description: "15 gallon capacity rolling garden cart",
+            price: 32.99,
             starRating: 4.2,
-        }
-            
+            imageUrl: "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        },
+        {
+            productId: 5,
+            productName: "Hammer",
+            productCode: "TBX-0048",
+            releaseDate: new Date(),
+            description: "Curved claw steel hammer",
+            price: 8.9,
+            starRating: 4.8,
+            imageUrl: "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        },
     ]
 
     toggleImage(): void {

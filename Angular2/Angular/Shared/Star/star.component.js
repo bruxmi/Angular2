@@ -9,19 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import { ProductListComponent } from './Products/product-list.component';
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = "Product Managment";
+var StarComponent = (function () {
+    function StarComponent() {
     }
-    AppComponent = __decorate([
+    StarComponent.prototype.ngOnChanges = function () {
+        this.starWidth = this.rating * 86 / 5;
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], StarComponent.prototype, "rating", void 0);
+    StarComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n        <h1>{{pageTitle}}</h1>\n        <pm-products></pm-products>"
+            moduleId: module.id,
+            selector: "ai-star",
+            templateUrl: "star.component.html",
+            styleUrls: ["star.component.css"]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], StarComponent);
+    return StarComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.StarComponent = StarComponent;
+//# sourceMappingURL=star.component.js.map
