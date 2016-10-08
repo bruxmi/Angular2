@@ -1,8 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
-//import { ProductFilterPipe } from './product-filter.pipe';
-//import { StarComponent } from '../Shared/Star/star.component';
-
 
 @Component({
     moduleId: module.id,

@@ -9,8 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import { ProductFilterPipe } from './product-filter.pipe';
-//import { StarComponent } from '../Shared/Star/star.component';
 var ProductListComponent = (function () {
     function ProductListComponent() {
         this.pageTitle = "Product List";
