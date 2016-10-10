@@ -1,7 +1,9 @@
 ﻿import { Component } from '@angular/core';
+import { ProductDataService } from "./Products/product-data.service"
 
 @Component({
     selector: 'my-app',
+    providers: [ProductDataService], 
     template: `
         <h1>{{pageTitle}}</h1>
         <pm-products></pm-products>`

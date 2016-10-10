@@ -8,21 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var product_data_service_1 = require("./Products/product-data.service");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = "Product Managment";
+var core_1 = require("@angular/core");
+var ProductDataService = (function () {
+    function ProductDataService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            providers: [product_data_service_1.ProductDataService],
-            template: "\n        <h1>{{pageTitle}}</h1>\n        <pm-products></pm-products>"
-        }), 
+    ProductDataService.prototype.getProduct = function () {
+        return null;
+    };
+    ProductDataService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ProductDataService);
+    return ProductDataService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ProductDataService = ProductDataService;
+//# sourceMappingURL=productDataService.js.map
