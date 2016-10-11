@@ -9,47 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Observable_1 = require('rxjs/Observable');
 var ProductDataService = (function () {
-    function ProductDataService() {
+    function ProductDataService(http) {
+        this.http = http;
+        this.productUrl = '/api/productQuery';
     }
+    ProductDataService.prototype.handleError = function (error) {
+        console.error(error);
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
     ProductDataService.prototype.getProducts = function () {
-        var products = [
-            {
-                productId: 1,
-                productName: "Leaf Rake",
-                productCode: "GDN-0011",
-                releaseDate: new Date(),
-                description: "Leaf rake with 48-inch wooden handle.",
-                price: 19.95,
-                starRating: 3.2,
-                imageUrl: "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            },
-            {
-                productId: 2,
-                productName: "Garden Cart",
-                productCode: "GDN-0023",
-                releaseDate: new Date(),
-                description: "15 gallon capacity rolling garden cart",
-                price: 32.99,
-                starRating: 4.2,
-                imageUrl: "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-            },
-            {
-                productId: 5,
-                productName: "Hammer",
-                productCode: "TBX-0048",
-                releaseDate: new Date(),
-                description: "Curved claw steel hammer",
-                price: 8.9,
-                starRating: 4.8,
-                imageUrl: "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-            },
-        ];
-        return products;
+        return this.http.get(this.productUrl)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log("ALL: " + JSON.stringify(data)); })
+            .catch(this.handleError);
     };
     ProductDataService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], ProductDataService);
     return ProductDataService;
 }());

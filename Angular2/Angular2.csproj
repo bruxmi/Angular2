@@ -127,6 +127,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\ProductQueryController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -233,6 +234,7 @@
     <TypeScriptCompile Include="Angular\Products\product.ts" />
     <TypeScriptCompile Include="Angular\Products\product-filter.pipe.ts" />
     <TypeScriptCompile Include="Angular\Products\product-data.service.ts" />
+    <TypeScriptCompile Include="Angular\rxjs-operators.ts" />
     <TypeScriptCompile Include="Angular\Shared\shared.module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var product_data_service_1 = require("./Products/product-data.service");
+require('./rxjs-operators');
 var AppComponent = (function () {
     function AppComponent() {
         this.pageTitle = "Product Managment";

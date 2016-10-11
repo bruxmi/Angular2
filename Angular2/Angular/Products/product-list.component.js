@@ -23,8 +23,11 @@ var ProductListComponent = (function () {
         this.showImage = !this.showImage;
     };
     ProductListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log("In OnInit");
-        this.products = this.productDataService.getProducts();
+        this.productDataService.getProducts().subscribe(function (product) {
+            _this.products = product;
+        });
     };
     ProductListComponent.prototype.onRatingClicked = function (message) {
         this.pageTitle = "Product List: " + message;

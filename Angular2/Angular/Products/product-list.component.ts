@@ -1,4 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { IProduct } from './product';
 import { ProductDataService } from './product-data.service';
 
@@ -16,7 +17,7 @@ export class ProductListComponent implements OnInit{
     showImage: boolean = false;
     listFilter: string = "";
     products: IProduct[];
-
+    errorMessage: string;
     constructor(private productDataService: ProductDataService) {
     }
 
@@ -26,7 +27,9 @@ export class ProductListComponent implements OnInit{
 
     ngOnInit(): void {
         console.log("In OnInit");
-        this.products = this.productDataService.getProducts();
+        this.productDataService.getProducts().subscribe((product: IProduct[]) => {
+            this.products = product;
+        });
     }
 
     onRatingClicked(message: string): void {
