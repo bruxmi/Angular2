@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -10,9 +8,10 @@ namespace Angular2.Api
 {
     public class ProductQueryController : ApiController
     {
-        public async Task<IHttpActionResult> GetProducts()
+        private readonly List<Product> productList;
+        public ProductQueryController()
         {
-            var result = new List<Product>
+            productList = new List<Product>
             {
                 new Product
                 {
@@ -48,7 +47,16 @@ namespace Angular2.Api
                     starRating = 2.51m
                 }
             };
-            return Ok(await Task.FromResult(result));
+        }
+
+        public async Task<IHttpActionResult> GetProducts()
+        {
+            return Ok(await Task.FromResult(productList));
+        }
+        public async Task<IHttpActionResult> GetProductById(int id)
+        {
+            throw new Exception();
+            return Ok(await Task.FromResult(productList.FirstOrDefault(a => a.productId == id)));
         }
     }
 

@@ -11,30 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Observable_1 = require('rxjs/Observable');
-var ProductDataService = (function () {
-    function ProductDataService(http) {
+var HttpDataService = (function () {
+    function HttpDataService(http) {
         this.http = http;
-        this.productUrl = '/api/productQuery/';
     }
-    ProductDataService.prototype.handleError = function (error) {
+    HttpDataService.prototype.handleError = function (error) {
         console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
-    ProductDataService.prototype.getProducts = function () {
-        return this.http.get(this.productUrl)
+    HttpDataService.prototype.getAll = function (url) {
+        return this.http.get(url)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    ProductDataService.prototype.getProduct = function (id) {
-        return this.http.get(this.productUrl + id)
+    HttpDataService.prototype.get = function (url, id) {
+        return this.http.get(url + id)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    ProductDataService = __decorate([
+    HttpDataService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], ProductDataService);
-    return ProductDataService;
+    ], HttpDataService);
+    return HttpDataService;
 }());
-exports.ProductDataService = ProductDataService;
-//# sourceMappingURL=product-data.service.js.map
+exports.HttpDataService = HttpDataService;
+//# sourceMappingURL=http-data.js.map

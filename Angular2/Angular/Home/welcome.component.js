@@ -9,25 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var star_component_1 = require('./Star/star.component');
-var http_data_service_1 = require("./Http/http-data.service");
-var SharedModule = (function () {
-    function SharedModule() {
+var WelcomeComponent = (function () {
+    function WelcomeComponent() {
+        this.pageTitle = 'Welcome';
     }
-    SharedModule = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule],
-            exports: [
-                common_1.CommonModule,
-                star_component_1.StarComponent
-            ],
-            providers: [http_data_service_1.HttpDataService],
-            declarations: [star_component_1.StarComponent],
+    WelcomeComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'welcome.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], SharedModule);
-    return SharedModule;
+    ], WelcomeComponent);
+    return WelcomeComponent;
 }());
-exports.SharedModule = SharedModule;
-//# sourceMappingURL=shared.module.js.map
+exports.WelcomeComponent = WelcomeComponent;
+//# sourceMappingURL=welcome.component.js.map

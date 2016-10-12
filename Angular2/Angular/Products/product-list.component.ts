@@ -1,7 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+
 import { IProduct } from './product';
-import { ProductDataService } from './product-data.service';
+import { HttpDataService } from "../Shared/Http/http-data.service";
+import { productQueryUrl } from "./product.module";
+
 
 @Component({
     moduleId: module.id,
@@ -18,7 +21,7 @@ export class ProductListComponent implements OnInit{
     listFilter: string = "";
     products: IProduct[];
     errorMessage: string;
-    constructor(private productDataService: ProductDataService) {
+    constructor(private http: HttpDataService<IProduct>) {
     }
 
     toggleImage(): void {
@@ -27,7 +30,7 @@ export class ProductListComponent implements OnInit{
 
     ngOnInit(): void {
         console.log("In OnInit");
-        this.productDataService.getProducts().subscribe((product: IProduct[]) => {
+        this.http.getAll(productQueryUrl).subscribe((product: IProduct[]) => {
             this.products = product;
         });
     }

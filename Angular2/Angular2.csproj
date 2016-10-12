@@ -168,9 +168,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\Home\welcome.component.html" />
     <Content Include="Angular\Products\product-list.component.css" />
     <Content Include="Angular\Shared\Star\star.component.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Assets\logo.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -200,6 +202,7 @@
     <Content Include="package.json" />
     <Content Include="Angular\Products\product-list.component.html" />
     <Content Include="Angular\Shared\Star\star.component.html" />
+    <Content Include="Angular\Products\product-detail.component.html" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -226,15 +229,18 @@
     <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Angular\app-routing.module.ts" />
     <TypeScriptCompile Include="Angular\app.module.ts" />
     <TypeScriptCompile Include="Angular\app.component.ts" />
+    <TypeScriptCompile Include="Angular\Home\welcome.component.ts" />
     <TypeScriptCompile Include="Angular\main.ts" />
+    <TypeScriptCompile Include="Angular\Products\product-detail.component.ts" />
     <TypeScriptCompile Include="Angular\Products\product-list.component.ts" />
     <TypeScriptCompile Include="Angular\Products\product.module.ts" />
     <TypeScriptCompile Include="Angular\Products\product.ts" />
     <TypeScriptCompile Include="Angular\Products\product-filter.pipe.ts" />
-    <TypeScriptCompile Include="Angular\Products\product-data.service.ts" />
     <TypeScriptCompile Include="Angular\rxjs-operators.ts" />
+    <TypeScriptCompile Include="Angular\Shared\Http\http-data.service.ts" />
     <TypeScriptCompile Include="Angular\Shared\shared.module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

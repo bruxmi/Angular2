@@ -2,19 +2,26 @@
 import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../Shared/shared.module';
+import { AppRoutingModule } from "../app-routing.module"
 
 import { ProductListComponent } from './product-list.component';
 import { ProductFilterPipe } from './product-filter.pipe';
+import { ProductDetailComponent } from "./product-detail.component"
 
 @NgModule({
     imports: [
         FormsModule,
         SharedModule,
+        AppRoutingModule
     ],
-    exports: [ProductListComponent, ProductFilterPipe],
+    exports: [ProductListComponent, ProductFilterPipe, ProductDetailComponent],
     declarations: [
         ProductListComponent,
-        ProductFilterPipe
+        ProductFilterPipe,
+        ProductDetailComponent
     ]
 })
-export class ProductModule { }
+export class ProductModule {
+}
+
+export const productQueryUrl: string = "api/productQuery/";

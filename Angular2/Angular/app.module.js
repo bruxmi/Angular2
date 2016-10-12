@@ -8,19 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var platform_browser_1 = require('@angular/platform-browser');
-var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
-var product_module_1 = require('./Products/product.module');
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
+var app_component_1 = require("./app.component");
+var product_module_1 = require("./Products/product.module");
+var app_routing_module_1 = require("./app-routing.module");
+var welcome_component_1 = require("./Home/welcome.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, product_module_1.ProductModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [platform_browser_1.BrowserModule,
+                http_1.HttpModule,
+                forms_1.FormsModule,
+                product_module_1.ProductModule,
+                app_routing_module_1.AppRoutingModule
+            ],
+            declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
