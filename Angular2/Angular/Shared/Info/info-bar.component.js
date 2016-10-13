@@ -64,7 +64,19 @@ var InfoBarComponent = (function () {
             moduleId: module.id,
             selector: "info-bar",
             templateUrl: "info-bar.component.html",
-            styleUrls: ["info-bar.component.css"]
+            styleUrls: ["info-bar.component.css"],
+            animations: [
+                core_1.trigger('flyInOut', [
+                    core_1.state('in', core_1.style({ transform: 'translateY(0)' })),
+                    core_1.transition('void => *', [
+                        core_1.style({ transform: 'translateY(-100%)' }),
+                        core_1.animate(100)
+                    ]),
+                    core_1.transition('* => void', [
+                        core_1.animate(100, core_1.style({ transform: 'translateY(100%)' }))
+                    ])
+                ])
+            ]
         }), 
         __metadata('design:paramtypes', [info_bar_event_service_1.InfoBarEventService])
     ], InfoBarComponent);

@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnChanges } from "@angular/core";
+﻿import { Component, Input, OnChanges, animate, trigger, state, style, transition } from "@angular/core";
 import { InfoBarColor } from "./info-bar-color";
 import { InfoBarEventService } from "./info-bar-event.service";
 import {InfoMessage } from "./infoMessage";
@@ -7,7 +7,19 @@ import {InfoMessage } from "./infoMessage";
     moduleId: module.id,
     selector: "info-bar",
     templateUrl: "info-bar.component.html",
-    styleUrls: ["info-bar.component.css"]
+    styleUrls: ["info-bar.component.css"],
+    animations: [
+        trigger('flyInOut', [
+            state('in', style({ transform: 'translateY(0)' })),
+            transition('void => *', [
+                style({ transform: 'translateY(-100%)' }),
+                animate(100)
+            ]),
+            transition('* => void', [
+                animate(100, style({ transform: 'translateY(100%)' }))
+            ])
+        ])
+    ]
 })
 
 
