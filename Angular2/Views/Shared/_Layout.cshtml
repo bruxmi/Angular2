@@ -3,21 +3,20 @@
 <head>
     <base href="/">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/polyfill")
     @Scripts.Render("~/bundles/systemjs")
 </head>
 <body>
-    <div class="container body-content">
+    <div class="">
         <script>
             System.import('app').catch(function(err){ console.error(err); });
         </script>
         @RenderBody()
-        <hr />
+        <my-app>Loading...</my-app>
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 </body>

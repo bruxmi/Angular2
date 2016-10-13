@@ -55,7 +55,6 @@ namespace Angular2.Api
         }
         public async Task<IHttpActionResult> GetProductById(int id)
         {
-            throw new Exception();
             return Ok(await Task.FromResult(productList.FirstOrDefault(a => a.productId == id)));
         }
     }

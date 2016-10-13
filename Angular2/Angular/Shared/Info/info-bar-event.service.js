@@ -9,20 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-require('./rxjs-operators');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = "Product Managment";
+var infoMessage_1 = require("./infoMessage");
+var InfoBarEventService = (function () {
+    function InfoBarEventService() {
+        this.infoMessageChanged = new core_1.EventEmitter();
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: "app.component.html"
-        }), 
+    InfoBarEventService.prototype.showInfo = function (message, status) {
+        var toSend = new infoMessage_1.InfoMessage();
+        toSend.message = message;
+        toSend.status = status;
+        this.infoMessageChanged.emit(toSend);
+    };
+    ;
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], InfoBarEventService.prototype, "infoMessageChanged", void 0);
+    InfoBarEventService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], InfoBarEventService);
+    return InfoBarEventService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.InfoBarEventService = InfoBarEventService;
+//# sourceMappingURL=info-bar-event.service.js.map

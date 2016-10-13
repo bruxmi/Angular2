@@ -3,14 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { StarComponent } from './Star/star.component';
 import { HttpDataService } from "./Http/http-data.service";
+import { InfoBarEventService } from "./Info/info-bar-event.service";
+import { InfoBarComponent } from "./Info/info-bar.component";
 
 @NgModule({
     imports: [CommonModule],
     exports: [
         CommonModule,
-        StarComponent
+        StarComponent,
+        InfoBarComponent
     ],
-    providers: [HttpDataService],
-    declarations: [StarComponent],
+    providers: [HttpDataService, InfoBarEventService],
+    declarations: [StarComponent, InfoBarComponent],
 })
 export class SharedModule { }

@@ -8,21 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-require('./rxjs-operators');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = "Product Managment";
+var core_1 = require("@angular/core");
+var info_bar_color_1 = require("./info-bar-color");
+var ErrorBarComponent = (function () {
+    function ErrorBarComponent() {
     }
-    AppComponent = __decorate([
+    ErrorBarComponent.prototype.ngOnInit = function () {
+        this.bgColors = [
+            new info_bar_color_1.InfoBarColor("default", 'rgbaCode = "rgba(211, 211, 211, 0.7)"'),
+            new info_bar_color_1.InfoBarColor("success", 'rgbaCode = "rgba(122, 184, 0, 0.7)"'),
+            new info_bar_color_1.InfoBarColor("danger", 'rgbaCode = "rgba(217, 83, 79, 0.7)"')
+        ];
+    };
+    ErrorBarComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: "app.component.html"
+            selector: "error-bar",
+            templateUrl: "error-bar.component.html"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ErrorBarComponent);
+    return ErrorBarComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ErrorBarComponent = ErrorBarComponent;
+;
+//# sourceMappingURL=error-bar.component.js.map

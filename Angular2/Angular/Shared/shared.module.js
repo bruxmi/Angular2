@@ -12,6 +12,8 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var star_component_1 = require('./Star/star.component');
 var http_data_service_1 = require("./Http/http-data.service");
+var info_bar_event_service_1 = require("./Info/info-bar-event.service");
+var info_bar_component_1 = require("./Info/info-bar.component");
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -20,10 +22,11 @@ var SharedModule = (function () {
             imports: [common_1.CommonModule],
             exports: [
                 common_1.CommonModule,
-                star_component_1.StarComponent
+                star_component_1.StarComponent,
+                info_bar_component_1.InfoBarComponent
             ],
-            providers: [http_data_service_1.HttpDataService],
-            declarations: [star_component_1.StarComponent],
+            providers: [http_data_service_1.HttpDataService, info_bar_event_service_1.InfoBarEventService],
+            declarations: [star_component_1.StarComponent, info_bar_component_1.InfoBarComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], SharedModule);

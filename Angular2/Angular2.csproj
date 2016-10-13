@@ -168,8 +168,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\app.component.html" />
     <Content Include="Angular\Home\welcome.component.html" />
     <Content Include="Angular\Products\product-list.component.css" />
+    <Content Include="Angular\Shared\Info\info-bar.component.css" />
+    <Content Include="Angular\Shared\Info\Info-bar.component.html" />
     <Content Include="Angular\Shared\Star\star.component.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Assets\logo.jpg" />
@@ -240,6 +243,10 @@
     <TypeScriptCompile Include="Angular\Products\product.ts" />
     <TypeScriptCompile Include="Angular\Products\product-filter.pipe.ts" />
     <TypeScriptCompile Include="Angular\rxjs-operators.ts" />
+    <TypeScriptCompile Include="Angular\Shared\Info\info-bar-event.service.ts" />
+    <TypeScriptCompile Include="Angular\Shared\Info\info-bar.component.ts" />
+    <TypeScriptCompile Include="Angular\Shared\Info\info-bar-color.ts" />
+    <TypeScriptCompile Include="Angular\Shared\Info\infoMessage.ts" />
     <TypeScriptCompile Include="Angular\Shared\Http\http-data.service.ts" />
     <TypeScriptCompile Include="Angular\Shared\shared.module.ts">
       <SubType>Code</SubType>

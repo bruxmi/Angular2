@@ -7,13 +7,15 @@ import { AppComponent }   from "./app.component";
 import { ProductModule } from "./Products/product.module";
 import { AppRoutingModule } from "./app-routing.module"
 import { WelcomeComponent } from "./Home/welcome.component";
+import { SharedModule } from "./Shared/shared.module";
 
 @NgModule({
     imports: [BrowserModule,
         HttpModule,
         FormsModule,
         ProductModule,
-        AppRoutingModule
+        AppRoutingModule,
+        SharedModule
     ],
     declarations: [AppComponent, WelcomeComponent],
     bootstrap: [AppComponent]
